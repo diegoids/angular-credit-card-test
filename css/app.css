@@ -34,6 +34,7 @@ form{
     overflow: hidden;
     margin-bottom: 15px;
   }
+    form .line div.big,
     form .line div:first-child{
       float: left;
     }
@@ -49,3 +50,38 @@ form{
     form .line div.half{
       width: 48%;
     }
+
+  form .error-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+    form .error-list li{
+      margin: 3px 0 0;
+      color: red;
+    }
+      form .error-list li:before{
+        padding-right: 8px;
+        content: "•";
+      }
+
+  form .cc-types{
+    overflow: hidden;
+    text-align: center;
+    list-style: none;
+    margin: 0 0 5px;
+    padding: 0;
+    clear: both;
+  }
+    form .cc-types li{
+      display: inline-block;
+      padding: 0 10px;
+    }
+      form .cc-types li i{
+        font-size: 30px;
+      }
+      form .cc-types.visa li i.fa-cc-visa,
+      form .cc-types.mastercard li i.fa-cc-mastercard,
+      form .cc-types.amex li i.fa-cc-amex{
+        color: green;
+      }

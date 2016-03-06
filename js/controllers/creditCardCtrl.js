@@ -1,11 +1,14 @@
 angular.module("netengine").controller("creditCardCtrl", function($scope, $http){
   
-  $scope.successCard = false;
-  $scope.errorCard   = false;
+  $scope.successCard  = false;
+  $scope.errorCard    = false;
+  $scope.ccinfo       = {'type': undefined};
+  $scope.currentYear  = new Date().getFullYear();
+  $scope.currentMonth = new Date().getMonth() + 1;
 
   // create an array of years from current year until the number provided in the function
   $scope.years = function(yearsLenght){
-    var currentYear = new Date().getFullYear(),
+    var currentYear = $scope.currentYear,
         yearsArray  = [currentYear],
         i;
 
@@ -28,14 +31,17 @@ angular.module("netengine").controller("creditCardCtrl", function($scope, $http)
         headers: {'Content-Type': 'application/application/json'},
         data: ccDetails
     }).then(function successCallback(response) {
+      
       $scope.successCardMsg = 'Success';
       $scope.successCard    = true;
       $scope.errorCard      = false;
+
     }, function errorCallback(response) {
-      console.info(response)
-      $scope.errorCardMsg = 'Error';
+      
+      $scope.errorCardMsg = 'An error has occurred';
       $scope.errorCard    = true;
       $scope.successCard  = false;
+
     });
   };
 
