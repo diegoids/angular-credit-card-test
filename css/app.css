@@ -1,3 +1,46 @@
+@media screen and (min-width: 768px){
+  .container{
+    width: 700px;
+  }
+  section.jumbotron{
+    padding: 20px !important;
+  }
+  .jumbotron h1{
+    font-size: 40px;
+  }
+  .jumbotron p{
+    font-size: 15px;
+  }
+}
 
+.container{
+  margin-top: 20px;
+}
 
-/*# sourceMappingURL=app.css.map */
+h1{
+  margin: 0 0 20px;
+  text-align: center;
+}
+
+form{
+  overflow: hidden;
+}
+  form .line{
+    overflow: hidden;
+    margin-bottom: 15px;
+  }
+    form .line div:first-child{
+      float: left;
+    }
+    form .line div:last-child{
+      float: right;
+    }
+    form .line div.big{
+      width: 65%;
+    }
+    form .line div.small{
+      width: 30%;
+    }
+    form .line div.half{
+      width: 48%;
+    }

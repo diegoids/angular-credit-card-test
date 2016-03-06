@@ -27,9 +27,56 @@
     <script src="app/assets/js/app.js"></script>
   </head>
 
-  <body ng-app="netengine">
+  <body ng-app="netengine" class="container">
     
-    <h1>Hello world!</h1>
+    <section ng-controller="creditCardCtrl" class="jumbotron">
+      <h1>Credit Card Check</h1>
+
+      <p>Insert your credit card data on the fields below:</p>
+      
+      <!-- Form input card data -->
+      <form ng-submit="addNewOrderPayment(newOrderPayment);">
+        <div class="line">
+          <!-- Card Number -->
+          <div class="big">
+            <input type="text" placeholder="Card Number" ng-model="newOrderPayment.cardNumber" class="form-control"/>
+          </div>
+          <div class="small">
+            <!-- CVV -->
+            <input type="text" placeholder="CVV" ng-model="newOrderPayment.cvv" class="form-control"/>
+          </div>
+        </div>
+        
+        <div class="line">
+          <!-- First Name -->
+          <div class="half">
+            <input type="text" placeholder="First Name" ng-model="newOrderPayment.firstName" class="form-control"/>
+          </div>
+          <!-- Last Name -->
+          <div class="half">
+            <input type="text" placeholder="Last Name" ng-model="newOrderPayment.lastName" class="form-control"/>
+          </div>
+        </div>
+
+        <div class="line">
+          <!-- Expire Month -->
+          <div class="half">
+            <select class="form-control">
+              <option value="0">Expire Month</option>
+            </select>
+          </div>
+          <!-- Expire Year -->
+          <div class="half">
+            <select class="form-control">
+              <option value="0">Expire Year</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <button class="btn btn-primary btn-block">Send Data</button>
+      </form>
+    </section>
 
   </body>
 </html>
