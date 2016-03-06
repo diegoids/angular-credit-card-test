@@ -1,5 +1,6 @@
 angular.module("netengine").controller("creditCardCtrl", function($scope, $http){
   
+  // initialize some vars
   $scope.successCard  = false;
   $scope.errorCard    = false;
   $scope.ccinfo       = {'type': undefined};

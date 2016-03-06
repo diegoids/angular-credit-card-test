@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Netengine's Test</title>
+    <title>Credit Card Widget</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta name="description" content="Netengine's Test" />
+    <meta name="description" content="Credit Card Widget" />
 
-    <meta property="og:title" content="Netengine's Test"/>
-    <meta property="og:site_name" content="Netengine's Test"/>
-    <meta property="og:url" content="http://www.netengine.com.au"/>
+    <meta property="og:title" content="Credit Card Widget"/>
+    <meta property="og:site_name" content="Credit Card Widget"/>
+    <meta property="og:url" content="http://www.diegoneitzel.com"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:description" content="Netengine's Test"/>
+    <meta property="og:description" content="Credit Card Widget"/>
 
     <!-- Font -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -34,7 +34,7 @@
   <body ng-app="netengine" class="container">
     
     <section ng-controller="creditCardCtrl" class="jumbotron">
-      <h1>Credit Card Check</h1>
+      <h1>Credit Card Widget</h1>
 
       <p>Insert your credit card data on the fields below:</p>
 
@@ -139,7 +139,8 @@
         <!-- Submit -->
         <button class="btn btn-primary btn-block">Send Data</button>
       </form>
-
+      
+      <!-- Show card info parsed in JSON -->
       <p class="bg-info">
         {{newOrderPayment | json}}
       </p>
