@@ -5,6 +5,8 @@ angular.module("netengine").controller("creditCardCtrl", function($scope, $http)
   $scope.ccinfo       = {'type': undefined};
   $scope.currentYear  = new Date().getFullYear();
   $scope.currentMonth = new Date().getMonth() + 1;
+  
+  $scope.newOrderPayment = {'order_id': '1'};
 
   // create an array of years from current year until the number provided in the function
   $scope.years = function(yearsLenght){
@@ -28,7 +30,7 @@ angular.module("netengine").controller("creditCardCtrl", function($scope, $http)
     $http({
         method: "post",
         url: URL,
-        headers: {'Content-Type': 'application/application/json'},
+        headers: {'Content-Type': 'application/json'},
         data: ccDetails
     }).then(function successCallback(response) {
       

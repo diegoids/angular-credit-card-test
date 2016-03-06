@@ -57,6 +57,7 @@
           <!-- Card Number -->
           <div class="big">
             <input type="text" placeholder="Card Number" name="credit_card" ng-model="newOrderPayment.credit_card.number" class="form-control" luhn-check required data-ng-pattern="/^[0-9]+$/" credit-card-type data-ng-minlength="15" maxlength="19" />
+            
             <ul class="error-list" ng-show="formCreditCard.$submitted && !formCreditCard.$valid">
               <li ng-show="formCreditCard.credit_card.$error.minlength">Credit card must be between 15-19 digits</li>
               <li ng-show="formCreditCard.credit_card.$error.pattern">Credit card number must be only numbers</li>
@@ -69,6 +70,7 @@
           <div class="small">
             <!-- CVV -->
             <input type="text" placeholder="CVV" name="cvv" ng-model="newOrderPayment.credit_card.cvv" class="form-control" required data-ng-pattern="/^[0-9]+$/" data-ng-minlength="3" maxlength="4" />
+
             <ul class="error-list" ng-show="formCreditCard.$submitted && !formCreditCard.$valid">
               <li ng-show="formCreditCard.cvv.$error.pattern">Security code must contain only numbers</li>
               <li ng-show="formCreditCard.cvv.$error.minlength">Security code must be 3-4 digits</li>
@@ -81,6 +83,7 @@
           <!-- First Name -->
           <div class="half">
             <input type="text" placeholder="First Name" name="fname" ng-model="newOrderPayment.credit_card.first_name" class="form-control" required />
+            
             <ul class="error-list" ng-show="formCreditCard.$submitted && !formCreditCard.$valid">
               <li ng-show="formCreditCard.fname.$error.required">First name required</li>
             </ul>
@@ -89,6 +92,7 @@
           <!-- Last Name -->
           <div class="half">
             <input type="text" placeholder="Last Name" name="lname" ng-model="newOrderPayment.credit_card.last_name" class="form-control" required />
+            
             <ul class="error-list" ng-show="formCreditCard.$submitted && !formCreditCard.$valid">
               <li ng-show="formCreditCard.lname.$error.required">Last name required</li>
             </ul>
@@ -113,6 +117,7 @@
               <option value="11">Nov</option>
               <option value="12">Dec</option>
             </select>
+            
             <ul class="error-list" ng-show="formCreditCard.$submitted && !formCreditCard.$valid">
               <li ng-show="formCreditCard.expMon.$error.required">Expire month required</li>
               <li ng-show="formCreditCard.expMon.$error.expiration">Your card is Expired</li>
@@ -124,6 +129,7 @@
             <select class="form-control" name="expYear" ng-model="newOrderPayment.credit_card.expiry_year" ng-options="year for year in years(10)" required>
               <option value="">Expire Year</option>
             </select>
+            
             <ul class="error-list" ng-show="formCreditCard.$submitted && !formCreditCard.$valid">
               <li ng-show="formCreditCard.expYear.$error.required">Expire Year required</li>
             </ul>
@@ -133,6 +139,10 @@
         <!-- Submit -->
         <button class="btn btn-primary btn-block">Send Data</button>
       </form>
+
+      <p class="bg-info">
+        {{newOrderPayment | json}}
+      </p>
     </section>
 
   </body>
