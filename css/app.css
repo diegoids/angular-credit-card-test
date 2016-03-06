@@ -13,8 +13,13 @@
   }
 }
 
-.container{
-  margin-top: 20px;
+body{
+  padding-top: 20px;
+}
+
+.callback-info{
+  padding: 10px;
+  text-align: center;
 }
 
 h1{
